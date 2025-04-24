@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Contact Info</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-color: #121212;
+            color: #f1f1f1;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .navbar {
+            background-color: #00916E;
+        }
+
+        .navbar-brand {
+            font-weight: 600;
+            font-size: 24px;
+        }
+
+        .navbar-nav .nav-link {
+            color: #f1f1f1 !important;
+            font-weight: 500;
+        }
+
+        h1 {
+            font-size: 42px;
+            font-weight: 600;
+            color: #ffffff;
+        }
+
+        .card {
+            background-color: #1e1e1e;
+            border-radius: 15px;
+            padding: 20px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            transition: transform 0.2s ease-in-out;
+        }
+
+        .card:hover {
+            transform: scale(1.03);
+        }
+
+        .card h5 {
+            font-weight: 600;
+            color: #ffffff;
+            margin-bottom: 10px;
+        }
+
+        .card p {
+            color: #cccccc;
+            font-size: 14px;
+            margin-bottom: 5px;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark">
+    <div class="container">
+        <a class="navbar-brand" href="#">My Book Recommender</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="/recommend">Recommend</a></li>
+                <li class="nav-item active"><a class="nav-link" href="/contact">Contact</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- Contact Info -->
+<div class="container mt-5">
+    <h1 class="text-center mb-4">Contact Information</h1>
+    <div class="row">
+        {% for student in students %}
+        <div class="col-md-6">
+            <div class="card">
+                <h5>Name: {{ student.name }}</h5>
+                <p>Email: {{ student.email }}</p>
+                <p>Branch: {{ student.branch }}</p>
+                <p>College: {{ student.college }}</p>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+<!-- Bootstrap 5 JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
