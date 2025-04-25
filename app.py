@@ -16,7 +16,7 @@ def index():
                            author=list(popular_books['Book-Author'].values),
                            image=list(popular_books['Image-URL-M'].values),
                            votes=list(popular_books['rating-Count'].values),
-                           rating=list(popular_books['avg-rating'].values)
+                           rating=list(popular_books['avg-rating'].round(1).values)
                            )
 
 @app.route('/recommend')
@@ -48,14 +48,14 @@ def contact():
     students = [
         {
             'name': 'Aditya Thorat',
-            'email': 'adityathorat206@gmail.com',
-            'branch': 'Computer Science and Engineering',
+            'email': 'adityathorat@gmail.com',
+            'mobile': '9513415225',
             'college': 'Govt. Collage of Engineering, Amravati'
         },
         {
-            'name': 'Tejas Gaurkhade',
-            'email': 'tejasgaurkhede3000@gmail.com',
-            'branch': 'Computer Science and Engineering',
+            'name': 'Tejas Gaurkhede',
+            'email': 'tejasgaurkhede@gmail.com',
+            'mobile': '9623235232',
             'college': 'Govt. Collage of Engineering, Amravati'
         }
     ]
