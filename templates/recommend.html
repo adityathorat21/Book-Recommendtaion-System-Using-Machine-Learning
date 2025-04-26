@@ -112,7 +112,7 @@
             <form action="/recommend_books" method="post" class="mb-5">
                 <div class="form-group">
                     <input name="user_input" type="text" class="form-control form-control-lg"
-                           placeholder="Enter a book name..." value="{{ user_input }}">
+                           placeholder="Enter a book name..." value="{{ user_input | default('') }}">
                 </div>
                 <button type="submit" class="btn btn-warning btn-lg">Recommend</button>
             </form>
